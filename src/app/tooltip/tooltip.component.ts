@@ -3,7 +3,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { TooltipPosition } from './model/tooltip-position.enum';
 
 @Component({
-  selector: 'awesome-tooltip',
+  selector: 'crowder-tooltip',
   styleUrls: ['./tooltip.component.scss'],
   templateUrl: './tooltip.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
