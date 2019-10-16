@@ -13,6 +13,7 @@ export class TooltipDirective implements OnInit {
   @Input() tooltipTextColour: string;
   @Input() tooltipTextSize: string;
   @Input() tooltipPosition: TooltipPosition;
+  @Input() tooltipArrow: boolean;
 
   private overlayRef: OverlayRef;
 
@@ -37,6 +38,8 @@ export class TooltipDirective implements OnInit {
     tooltipRef.instance.tooltipBackgroundColour = this.tooltipBackgroundColour;
     tooltipRef.instance.tooltipTextColour = this.tooltipTextColour;
     tooltipRef.instance.tooltipTextSize = this.tooltipTextSize;
+    tooltipRef.instance.tooltipPosition = this.tooltipPosition;
+    tooltipRef.instance.tooltipArrow = this.tooltipArrow;
   }
 
   @HostListener('mouseout') hide() {
@@ -46,6 +49,22 @@ export class TooltipDirective implements OnInit {
   private setDefault(): void {
     if (this.tooltipPosition == null) {
       this.tooltipPosition = TooltipPosition.BOTTOMCENTRE;
+    }
+
+    if (this.tooltipArrow == null) {
+      this.tooltipArrow = false;
+    }
+
+    if (this.tooltipBackgroundColour == null) {
+      this.tooltipBackgroundColour = 'black';
+    }
+
+    if (this.tooltipTextColour == null) {
+      this.tooltipTextColour = 'white';
+    }
+
+    if (this.tooltipTextSize == null) {
+      this.tooltipTextSize = '0.75rem'
     }
   }
 

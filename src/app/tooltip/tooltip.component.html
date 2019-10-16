@@ -1,1 +1,15 @@
-<div class='tooltip' @tooltip>{{ tooltipMessage }}</div>
+<div
+    @tooltip
+    class='tooltip'
+    [class.bl]='tooltipPosition === TooltipPosition.BOTTOMLEFT && tooltipArrow === true'
+    [class.bc]='tooltipPosition === TooltipPosition.BOTTOMCENTRE && tooltipArrow === true'
+    [class.br]='tooltipPosition === TooltipPosition.BOTTOMRIGHT && tooltipArrow === true'
+    [class.tl]='tooltipPosition === TooltipPosition.TOPLEFT && tooltipArrow === true'
+    [class.tc]='tooltipPosition === TooltipPosition.TOPCENTRE && tooltipArrow === true'
+    [class.tr]='tooltipPosition === TooltipPosition.TOPRIGHT && tooltipArrow === true'
+    [style.backgroundColor]=tooltipBackgroundColour
+    [style.color]=tooltipTextColour
+    [style.fontSize]=tooltipTextSize
+>
+    {{ tooltipMessage }}
+</div>

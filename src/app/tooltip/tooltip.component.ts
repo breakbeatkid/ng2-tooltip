@@ -1,5 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { TooltipPosition } from './model/tooltip-position.enum';
 
 @Component({
   selector: 'awesome-tooltip',
@@ -19,8 +20,11 @@ import { animate, style, transition, trigger } from '@angular/animations';
   ],
 })
 export class TooltipComponent {
+  TooltipPosition = TooltipPosition;
   @Input() tooltipMessage: string;
   @Input() tooltipBackgroundColour: string;
   @Input() tooltipTextColour: string;
   @Input() tooltipTextSize: string;
+  @Input() tooltipPosition: TooltipPosition;
+  @Input() tooltipArrow: boolean;
 }
