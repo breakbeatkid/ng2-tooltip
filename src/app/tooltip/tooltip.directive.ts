@@ -47,10 +47,6 @@ export class TooltipDirective implements OnInit {
   }
 
   private setDefault(): void {
-    if (this.tooltipPosition == null) {
-      this.tooltipPosition = TooltipPosition.BOTTOMCENTRE;
-    }
-
     if (this.tooltipArrow == null) {
       this.tooltipArrow = false;
     }
