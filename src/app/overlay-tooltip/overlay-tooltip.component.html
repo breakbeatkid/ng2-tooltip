@@ -1,17 +1,6 @@
 <div
     @tooltip
-    class='tooltip'
-    [class.bl]='tooltipPosition === TooltipPosition.BOTTOMLEFT && tooltipArrow === true'
-    [class.bc]='tooltipPosition === TooltipPosition.BOTTOMCENTRE && tooltipArrow === true'
-    [class.br]='tooltipPosition === TooltipPosition.BOTTOMRIGHT && tooltipArrow === true'
-    [class.tl]='tooltipPosition === TooltipPosition.TOPLEFT && tooltipArrow === true'
-    [class.tc]='tooltipPosition === TooltipPosition.TOPCENTRE && tooltipArrow === true'
-    [class.tr]='tooltipPosition === TooltipPosition.TOPRIGHT && tooltipArrow === true'
-    [class.l]='tooltipPosition === TooltipPosition.LEFT && tooltipArrow === true'
-    [class.r]='tooltipPosition === TooltipPosition.RIGHT && tooltipArrow === true'
-    [style.backgroundColor]=tooltipBackgroundColour
-    [style.color]=tooltipTextColour
-    [style.fontSize]=tooltipTextSize
+    class='tooltip tl'
 >
     {{ tooltipMessage }}
 </div>
