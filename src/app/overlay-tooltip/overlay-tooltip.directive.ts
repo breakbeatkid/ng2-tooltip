@@ -2,17 +2,17 @@ import { ComponentRef, Directive, ElementRef, HostListener, Input, OnInit } from
 import { Overlay, OverlayPositionBuilder, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 
-import { TooltipComponent } from './tooltip.component';
-import { TooltipPosition } from './model/tooltip-position.enum';
+import { OverlayTooltipComponent } from './overlay-tooltip.component';
+import { OverlayTooltipPosition } from './model/overlay-tooltip-position.enum';
 
-@Directive({ selector: '[crowderTooltip]' })
-export class TooltipDirective implements OnInit {
+@Directive({ selector: '[crowderOverlayTooltip]' })
+export class OverlayTooltipDirective implements OnInit {
 
   @Input() tooltipMessage: string;
   @Input() tooltipBackgroundColour: string;
   @Input() tooltipTextColour: string;
   @Input() tooltipTextSize: string;
-  @Input() tooltipPosition: TooltipPosition;
+  @Input() tooltipPosition: OverlayTooltipPosition;
   @Input() tooltipArrow: boolean;
 
   private overlayRef: OverlayRef;
@@ -23,17 +23,18 @@ export class TooltipDirective implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.elementRef);
     this.setDefault();
 
     const positionStrategy = this.overlayPositionBuilder
       .flexibleConnectedTo(this.elementRef)
-      .withPositions([ this.setPosition() ]);
+      .withPositions([this.setPosition()]);
 
     this.overlayRef = this.overlay.create({ positionStrategy });
   }
 
   @HostListener('mouseenter') show() {
-    const tooltipRef: ComponentRef<TooltipComponent> = this.overlayRef.attach(new ComponentPortal(TooltipComponent));
+    const tooltipRef: ComponentRef<OverlayTooltipComponent> = this.overlayRef.attach(new ComponentPortal(OverlayTooltipComponent));
     tooltipRef.instance.tooltipMessage = this.tooltipMessage;
     tooltipRef.instance.tooltipBackgroundColour = this.tooltipBackgroundColour;
     tooltipRef.instance.tooltipTextColour = this.tooltipTextColour;
@@ -60,13 +61,13 @@ export class TooltipDirective implements OnInit {
     }
 
     if (this.tooltipTextSize == null) {
-      this.tooltipTextSize = '0.75rem'
+      this.tooltipTextSize = '0.75rem';
     }
   }
 
   private setPosition(): any {
-    switch(this.tooltipPosition) {
-      case TooltipPosition.TOPLEFT:
+    switch (this.tooltipPosition) {
+      case OverlayTooltipPosition.TOPLEFT:
         return {
           originX: 'start',
           originY: 'top',
@@ -74,7 +75,7 @@ export class TooltipDirective implements OnInit {
           overlayY: 'bottom',
           offsetY: -8,
         };
-      case TooltipPosition.TOPCENTRE:
+      case OverlayTooltipPosition.TOPCENTRE:
         return {
           originX: 'center',
           originY: 'top',
@@ -82,7 +83,7 @@ export class TooltipDirective implements OnInit {
           overlayY: 'bottom',
           offsetY: -8,
         };
-      case TooltipPosition.TOPRIGHT:
+      case OverlayTooltipPosition.TOPRIGHT:
         return {
           originX: 'end',
           originY: 'top',
@@ -90,7 +91,7 @@ export class TooltipDirective implements OnInit {
           overlayY: 'bottom',
           offsetY: -8,
         };
-      case TooltipPosition.BOTTOMLEFT:
+      case OverlayTooltipPosition.BOTTOMLEFT:
         return {
           originX: 'start',
           originY: 'bottom',
@@ -98,7 +99,7 @@ export class TooltipDirective implements OnInit {
           overlayY: 'top',
           offsetY: 8,
         };
-      case TooltipPosition.BOTTOMRIGHT:
+      case OverlayTooltipPosition.BOTTOMRIGHT:
         return {
           originX: 'end',
           originY: 'bottom',
@@ -106,8 +107,7 @@ export class TooltipDirective implements OnInit {
           overlayY: 'top',
           offsetY: 8,
         };
-      case TooltipPosition.BOTTOMCENTRE:
-      default:
+      case OverlayTooltipPosition.BOTTOMCENTRE:
         return {
           originX: 'center',
           originY: 'bottom',
@@ -115,6 +115,22 @@ export class TooltipDirective implements OnInit {
           overlayY: 'top',
           offsetY: 8,
         };
-      }
+      case OverlayTooltipPosition.LEFT:
+        return {
+          originX: 'start',
+          originY: 'center',
+          overlayX: 'end',
+          overlayY: 'center',
+          offsetX: -8,
+        };
+      case OverlayTooltipPosition.RIGHT:
+        return {
+          originX: 'end',
+          originY: 'center',
+          overlayX: 'start',
+          overlayY: 'center',
+          offsetX: 8,
+        };
+    }
   }
 }

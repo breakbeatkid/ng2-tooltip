@@ -17,7 +17,7 @@
       border-width: 5px;
       border-style: solid;
       border-color: transparent transparent black transparent;
-    
+
     }
   }
 
@@ -30,7 +30,7 @@
       border-width: 5px;
       border-style: solid;
       border-color: transparent transparent black transparent;
-    
+
     }
   }
 
@@ -43,7 +43,7 @@
       border-width: 5px;
       border-style: solid;
       border-color: transparent transparent black transparent;
-    
+
     }
   }
 
@@ -56,7 +56,7 @@
       border-width: 5px;
       border-style: solid;
       border-color: black transparent transparent transparent;
-    
+
     }
   }
 
@@ -69,7 +69,7 @@
       border-width: 5px;
       border-style: solid;
       border-color: black transparent transparent transparent;
-    
+
     }
   }
 
@@ -82,7 +82,33 @@
       border-width: 5px;
       border-style: solid;
       border-color: black transparent transparent transparent;
-    
+
+    }
+  }
+
+  &.l {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent transparent black;
+      transform: translateY(-50%);
+    }
+  }
+
+  &.r {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -10px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent black transparent transparent;
+      transform: translateY(-50%);
     }
   }
 }

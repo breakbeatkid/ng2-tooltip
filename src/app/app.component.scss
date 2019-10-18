@@ -1,10 +1,10 @@
 :host {
   display: block;
-  padding-top: 5rem;
+  padding-top: 2rem;
 }
 
 .thing {
-  display: inline;
+  display: inline-block;
   background-color: #ea4c89;
   border: none;
   border-radius: 4px;
@@ -14,4 +14,11 @@
   outline: none;
   -moz-appearance: none;
   -webkit-appearance: none;
+  margin: 1rem;
+  width: 200px;
+  text-align: center;
+}
+
+.row {
+  margin: 1rem;
 }

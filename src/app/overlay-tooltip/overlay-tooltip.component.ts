@@ -1,11 +1,11 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { TooltipPosition } from './model/tooltip-position.enum';
+import { OverlayTooltipPosition } from './model/overlay-tooltip-position.enum';
 
 @Component({
-  selector: 'crowder-tooltip',
-  styleUrls: ['./tooltip.component.scss'],
-  templateUrl: './tooltip.component.html',
+  selector: 'crowder-overlay-tooltip',
+  styleUrls: ['./overlay-tooltip.component.scss'],
+  templateUrl: './overlay-tooltip.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('tooltip', [
@@ -19,12 +19,12 @@ import { TooltipPosition } from './model/tooltip-position.enum';
     ]),
   ],
 })
-export class TooltipComponent {
-  TooltipPosition = TooltipPosition;
+export class OverlayTooltipComponent {
+  TooltipPosition = OverlayTooltipPosition;
   @Input() tooltipMessage: string;
   @Input() tooltipBackgroundColour: string;
   @Input() tooltipTextColour: string;
   @Input() tooltipTextSize: string;
-  @Input() tooltipPosition: TooltipPosition;
+  @Input() tooltipPosition: OverlayTooltipPosition;
   @Input() tooltipArrow: boolean;
 }

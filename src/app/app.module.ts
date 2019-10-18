@@ -4,14 +4,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverlayModule } from '@angular/cdk/overlay';
 
 import { AppComponent } from './app.component';
-import { TooltipDirective } from './tooltip/tooltip.directive';
-import { TooltipComponent } from './tooltip/tooltip.component';
+import { OverlayTooltipDirective } from './overlay-tooltip/overlay-tooltip.directive';
+import { OverlayTooltipComponent } from './overlay-tooltip/overlay-tooltip.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TooltipDirective,
-    TooltipComponent,
+    OverlayTooltipDirective,
+    OverlayTooltipComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -20,7 +20,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [TooltipComponent],
+  entryComponents: [OverlayTooltipComponent],
 })
 export class AppModule {
 }

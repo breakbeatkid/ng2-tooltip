@@ -1,9 +1,87 @@
-<div
-    crowderTooltip
+<div class="row">
+  <div
+    crowderOverlayTooltip
     tooltipMessage="This is my tooltip!!"
-    [tooltipPosition]=TooltipPosition.TOPCENTRE
-    [tooltipArrow]=true
-    class='thing'
->
-    Hi there, I have a tooltip
+    [tooltipPosition]="TooltipPosition.TOPLEFT"
+    [tooltipArrow]="true"
+    class="thing"
+  >
+    Tooltip topleft
+  </div>
+
+  <div
+    crowderOverlayTooltip
+    tooltipMessage="This is my tooltip!!"
+    [tooltipPosition]="TooltipPosition.TOPCENTRE"
+    [tooltipArrow]="true"
+    class="thing"
+  >
+    Tooltip topcentre
+  </div>
+
+  <div
+    crowderOverlayTooltip
+    tooltipMessage="This is my tooltip!!"
+    [tooltipPosition]="TooltipPosition.TOPRIGHT"
+    [tooltipArrow]="true"
+    class="thing"
+  >
+    Tooltip topright
+  </div>
 </div>
+
+<div class="row" style='width: 800px; text-align: center'>
+  <div
+    crowderOverlayTooltip
+    tooltipMessage="This is my tooltip!!"
+    [tooltipPosition]="TooltipPosition.LEFT"
+    [tooltipArrow]="true"
+    class="thing"
+  >
+    Tooltip left
+  </div>
+
+  <div
+    crowderOverlayTooltip
+    tooltipMessage="This is my tooltip!!"
+    [tooltipPosition]="TooltipPosition.RIGHT"
+    [tooltipArrow]="true"
+    class="thing"
+  >
+    Tooltip right
+  </div>
+</div>
+
+<div class="row">
+  <div
+    crowderOverlayTooltip
+    tooltipMessage="This is my tooltip!!"
+    [tooltipPosition]="TooltipPosition.BOTTOMLEFT"
+    [tooltipArrow]="true"
+    class="thing"
+  >
+    Tooltip bottomleft
+  </div>
+
+  <div
+    crowderOverlayTooltip
+    tooltipMessage="This is my tooltip!!"
+    [tooltipPosition]="TooltipPosition.BOTTOMCENTRE"
+    [tooltipArrow]="true"
+    class="thing"
+  >
+    Tooltip bottomcentre
+  </div>
+
+  <div
+    crowderOverlayTooltip
+    tooltipMessage="This is my tooltip!!"
+    [tooltipPosition]="TooltipPosition.BOTTOMRIGHT"
+    [tooltipArrow]="true"
+    class="thing"
+    id='thingy'
+  >
+    Tooltip bottomright
+  </div>
+</div>
+

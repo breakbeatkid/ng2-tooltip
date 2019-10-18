@@ -1,4 +1,4 @@
-export enum TooltipPosition {
+export enum OverlayTooltipPosition {
     TOPLEFT,
     TOPCENTRE,
     TOPRIGHT,
